@@ -1,13 +1,18 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Home from './component/home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/index.css';
 
-// include your styles into the webpack bundle
-import "../styles/index.css";
-
-//import your own components
-import Home from "./component/home.jsx";
-
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+const container = document.getElementById('root');
+if (container) {
+  const root = ReactDOM.createRoot(container);
+  root.render(
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
+  );
+} else {
+  console.error("No se encontró el contenedor 'root' en el DOM.");
+}
 
